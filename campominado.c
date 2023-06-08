@@ -188,7 +188,7 @@ int main(){
 
         thegame(j2, j1);
 
-        printf("\nDeseja jogar novamente [1]sim/[2]nao");
+        printf("\nDeseja jogar novamente? [1]sim/[2]nao");
         scanf("%d",&escolha);
         if(escolha==2)
             break;
