@@ -6,7 +6,7 @@
 #define NUMC 10         //numero de colunas
 
 #define TAMT NUMC*NUML  //numero total de casas no tabuleiro
-#define NBOM 20         //numero de bombas no tabuleiro
+#define NBOM 20        //numero de bombas no tabuleiro
 
 
 typedef struct{
@@ -71,6 +71,8 @@ void contabombas(tabuleiro * j){    //coloca os numeros do lado das bombas
 }
 
 void inicializaJ2(tabuleiro * j2){      //coloca as bombas e os numeros no tabuleiro 2
+    for(int i = 0;i<TAMT;i++)
+        (j2+i)->bombaemvolta=32;
     for(int i=0;i<NBOM;i++){
         int num = rand()%100;
         if((j2+num)->bombaemvolta =='B')
@@ -173,8 +175,8 @@ void thegame(tabuleiro * j2, tabuleiro * j1){       //é onde ocorrem as intera�
 
 int main(){
     srand(time(NULL));
-    tabuleiro * j1 = malloc( TAMT* sizeof(tabuleiro)); //apresentado ao usuario
-    tabuleiro * j2 = calloc(TAMT,sizeof(tabuleiro)); //contem as informações
+    tabuleiro * j1 = malloc(TAMT*sizeof(tabuleiro)); //apresentado ao usuario
+    tabuleiro * j2 = malloc(TAMT*sizeof(tabuleiro)); //contem as informações
     if(j1==NULL || j2==NULL){
         printf("nao deu certo na alocacao\n");
         exit(1);
