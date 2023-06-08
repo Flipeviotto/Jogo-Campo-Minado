@@ -172,7 +172,6 @@ void thegame(tabuleiro * j2, tabuleiro * j1){       //é onde ocorrem as intera�
 }
 
 int main(){
-    printf("start\n");
     srand(time(NULL));
     tabuleiro * j1 = malloc( TAMT * sizeof(tabuleiro)); //apresentado ao usuario
     tabuleiro * j2 = malloc( TAMT * sizeof(tabuleiro)); //contem as informações
