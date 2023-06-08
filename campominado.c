@@ -6,7 +6,7 @@
 #define NUMC 10         //numero de colunas
 
 #define TAMT NUMC*NUML  //numero total de casas no tabuleiro
-#define NBOM 25         //numero de bombas no tabuleiro
+#define NBOM 20         //numero de bombas no tabuleiro
 
 
 typedef struct{
@@ -113,7 +113,7 @@ void thegame(tabuleiro * j2, tabuleiro * j1){       //é onde ocorrem as intera�
             printf("\ndigite a linha e a coluna que deseja abrir: ");
             scanf("%d %d",&l,&c);
             fflush(stdin);
-        } while(l>=NUML && c>=NUMC);
+        } while(l>=NUML || c>=NUMC);
 
         if((j2+c+(l*NUMC))->bombaemvolta == 'B'){
             printf("OPS! Ai tinha uma BOMBA!\n");
@@ -172,10 +172,9 @@ void thegame(tabuleiro * j2, tabuleiro * j1){       //é onde ocorrem as intera�
 }
 
 int main(){
-    printf("start\n");
     srand(time(NULL));
-    tabuleiro * j1 = malloc( TAMT * sizeof(tabuleiro)); //apresentado ao usuario
-    tabuleiro * j2 = malloc( TAMT * sizeof(tabuleiro)); //contem as informações
+    tabuleiro * j1 = malloc( TAMT* sizeof(tabuleiro)); //apresentado ao usuario
+    tabuleiro * j2 = calloc(TAMT,sizeof(tabuleiro)); //contem as informações
     if(j1==NULL || j2==NULL){
         printf("nao deu certo na alocacao\n");
         exit(1);
@@ -188,7 +187,7 @@ int main(){
 
         thegame(j2, j1);
 
-        printf("\nDeseja jogar novamente [1]sim/[2]nao");
+        printf("\nDeseja jogar novamente? [1]sim/[2]nao");
         scanf("%d",&escolha);
         if(escolha==2)
             break;
