@@ -84,7 +84,7 @@ void inicializaJ2(tabuleiro * j2){      //coloca as bombas e os numeros no tabul
     contabombas(j2);
 }
 
-void iniciart1(tabuleiro * j){      //coloca as brancas no tabuleiro 1
+void iniciart1(tabuleiro * j){      //coloca as caixas brancas no tabuleiro 1
     for(int i=0;i<TAMT;i++){
         (j+i)->bombaemvolta=219;
     }
