@@ -14,9 +14,8 @@ typedef struct{
 }tabuleiro;
 
 void showtabuleiro(tabuleiro * j){      //printa o tabuleiro na tela
-    printf("\n");
     int l=0,c=0;
-    printf("%2c",32);
+    printf("\n%2c",32);
     for(int i=0;i<NUMC;i++){
         printf("%2d",c++);
     }
