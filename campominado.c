@@ -9,7 +9,7 @@ created by Filipe Viotto
 #define DIMENSAO 10
 #define AREA (DIMENSAO*DIMENSAO)
 
-#define NBOM 25        //numero de bombas no tabuleiro
+#define NBOM 20        //numero de bombas no tabuleiro
 
 
 typedef struct{
@@ -87,7 +87,7 @@ void inicializaJ2(tabuleiro * j2){      //coloca as bombas e os numeros no tabul
     contabombas(j2);
 }
 
-void iniciart1(tabuleiro * j){      //coloca as brancas no tabuleiro 1
+void iniciart1(tabuleiro * j){      //preenche o tabuleiro 1
     for(int i=0;i<AREA;i++){
         (j+i)->bombaemvolta=219;
     }
