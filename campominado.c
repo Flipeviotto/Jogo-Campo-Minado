@@ -13,6 +13,7 @@ typedef struct{
 }tabuleiro;
 
 void showtabuleiro(tabuleiro * j){      //printa o tabuleiro na tela
+    printf("\n");
     int l=0,c=0;
     printf("%2c",32);
     for(int i=0;i<DIMENSAO;i++){
@@ -82,9 +83,13 @@ void inicializaJ2(tabuleiro * j2){      //coloca as bombas e os numeros no tabul
     contabombas(j2);
 }
 
-void iniciart1(tabuleiro * j){      //coloca as caixas brancas no tabuleiro 1
-
+void iniciart1(tabuleiro * j){      //coloca as brancas no tabuleiro 1
+    for(int i=0;i<AREA;i++){
         (j+i)->bombaemvolta=219;
+    }
+}
+
+int vitoria(tabuleiro * j){         //verifica se ainda há espaços sem bombas no tabuleiro 1
     int cont=0;
     for(int i=0;i<AREA;i++){
         if((j+i)->bombaemvolta== (char)219){
