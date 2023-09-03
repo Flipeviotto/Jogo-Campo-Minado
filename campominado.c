@@ -1,3 +1,7 @@
+/*
+created by Filipe Viotto
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
